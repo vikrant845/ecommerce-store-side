@@ -11,7 +11,7 @@ interface CartItemProps {
   data: Product;
 }
 
-const CartItem: React.FC<CartItemProps> = ({ data }) => {
+const CartItem: React.FC<CartItemProps> = ({ data = {} as Product }) => {
   const cart = useCart();
 
   const onRemove = () => {
