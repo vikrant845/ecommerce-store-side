@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Urbanist } from 'next/font/google';
 import './globals.css'
+import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
+import ModalProvider from '@/providers/modal_provider';
+import StoreProvider from '@/store/store_provider';
+import ToastProvider from '@/providers/toast_provider';
+// import PersistProvider from '@/store/persist_provider';
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,9 +20,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <StoreProvider>
+          {/* <PersistProvider> */}
+            <ModalProvider />
+            <ToastProvider />
+            <Navbar />
+            { children }
+            <Footer />
+          {/* </PersistProvider> */}
+        </StoreProvider>
+      </body>
     </html>
   )
 }
