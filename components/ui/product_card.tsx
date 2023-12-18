@@ -8,8 +8,6 @@ import Currency from "./currency";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { onOpen } from "@/store/slices/previewSlice";
-import { addItem } from "@/store/slices/cartSlice";
-import { RootState } from "@/store/store";
 import useCart from "@/actions/use_cart";
 
 interface ProductCardProps {
