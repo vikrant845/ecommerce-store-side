@@ -16,7 +16,7 @@ interface ProductCardProps {
   data: Product;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ data = {} as Product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const cart = useCart();

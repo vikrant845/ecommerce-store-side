@@ -4,8 +4,8 @@ import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 import Container from "@/components/ui/container";
 
-const ProductPage = async ({ params }: { params: { productId: string | null } }) => {
-  const product = await getProduct(params.productId!);
+const ProductPage = async ({ params }: { params: { productId: string } }) => {
+  const product = await getProduct(params.productId);
   const suggestedProducts = await getProducts({
     categoryId: product?.category?.id
   });

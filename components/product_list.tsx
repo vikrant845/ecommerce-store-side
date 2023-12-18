@@ -7,7 +7,7 @@ interface ProductListProps {
   items: Product[];
 }
 
-const ProductList: React.FC<ProductListProps> = async ({ title = '', items = [] as Product[] }) => {
+const ProductList: React.FC<ProductListProps> = async ({ title, items }) => {
   return (
     <div className="space-y-4">
       <h3 className="font-bold text-3xl">{title}</h3>
