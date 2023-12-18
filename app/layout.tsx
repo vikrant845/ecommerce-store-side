@@ -6,7 +6,6 @@ import Navbar from '@/components/navbar';
 import ModalProvider from '@/providers/modal_provider';
 import StoreProvider from '@/store/store_provider';
 import ToastProvider from '@/providers/toast_provider';
-// import PersistProvider from '@/store/persist_provider';
 
 const font = Urbanist({ subsets: ['latin'] })
 
@@ -25,13 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <StoreProvider>
-          {/* <PersistProvider> */}
-            <ModalProvider />
-            <ToastProvider />
-            <Navbar />
-            { children }
-            <Footer />
-          {/* </PersistProvider> */}
+          <ModalProvider />
+          <ToastProvider />
+          <Navbar />
+          { children }
+          <Footer />
         </StoreProvider>
       </body>
     </html>

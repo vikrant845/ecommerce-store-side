@@ -23,13 +23,7 @@ const useCart = create(
     },
     removeItem: (id: string) => {
       const currentItems = get().items;
-      const item = currentItems.find(item => item.id === id);
-      if (item) {
-        set({ items: [...currentItems.filter(item => item.id !== id)] });
-        return toast.success('Item removed from the cart');
-      } else {
-        return toast('Item not present in the cart');
-      }
+      set({ items: [...currentItems.filter(item => item.id !== id)] })
     },
     removeAll: () => {
       set({ items: [] })

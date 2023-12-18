@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import previewReducer from "@/store/slices/previewSlice";
-import cartReducer from '@/store/slices/cartSlice';
 // import { persistReducer, persistStore } from "redux-persist";
 // import storage from 'redux-persist/lib/storage';
 
@@ -19,7 +18,6 @@ import cartReducer from '@/store/slices/cartSlice';
 export const store = configureStore({
   reducer: {
     preview: previewReducer,
-    cart: cartReducer,
   }
 });
 // export const store = configureStore({
